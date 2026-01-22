@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap');
+@import "tailwindcss";
+@font-face{
+  font-family: "Undef";
+  src: url("../public/fonts/undefined-medium.woff")
+};
+
+@theme{
+  --font-sans: "Space Grotesk", system-ui, sans-serif;
+  --font-undefined: "Undef", system-ui, sans-serif;
+
+  --color-bg: #0a0a0a;
+  --color-fg: #ffffff;
+  --color-muted: #9ca3af;
+
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.5rem;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-fg antialiased;
+  }
+}
