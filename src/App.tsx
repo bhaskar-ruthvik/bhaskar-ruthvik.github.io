@@ -1,29 +1,50 @@
 import { AppSection } from "./components/AppSection";
+import { ContactSection } from "./components/ContactSection";
 import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
+import { ProjectsSection } from "./components/ProjectsSection";
+import { SectionSeparator } from "./components/SectionSeparator";
 
 function App() {
   return (
-    <div>
-      <main
-        className="
-          relative mx-auto min-h-screen rounded-lg
-          bg-[url('./kristaps-ungurs-bscs05zXuvE-unsplash.jpg')]
-          bg-cover bg-center bg-no-repeat
-          p-8 shadow-2xl px-6 md:px-16
-        "
-      >
-        {/* Overlay */}
-        <div className="absolute inset-0 rounded-lg bg-black/50" />
+    <div className="relative min-h-screen">
+      {/* Ambient background */}
+      <div className="fixed inset-0 -z-10">
+        <div
+          className="
+            h-full w-full
+            bg-[url('./kristaps-ungurs-bscs05zXuvE-unsplash.jpg')]
+            bg-cover bg-center
+            blur-xl scale-110
+            brightness-80 contrast-110
+          "
+        />
+      </div>
 
-        {/* Content */}
-        <div className="relative z-10">
-          <Navbar />
+      {/* FIXED NAVBAR — ISOLATED */}
+      <div className="fixed top-6 left-0 right-0 z-[9999] flex justify-center">
+        <Navbar />
+      </div>
+
+      {/* Page content */}
+      <main id="home" className="relative pt-32">
+        {/* HERO */}
+        <section className="min-h-screen flex items-center">
           <Hero />
-        </div>
-        <div className="pointer-events-none absolute bottom-0 left-0 h-48 w-full bg-gradient-to-b from-transparent to-[#070b0a]" />
+        </section>
+    <SectionSeparator/>
+        {/* ABOUT */}
+        <section id="about" className="min-h-screen">
+        <AppSection />
+        </section>
+        <SectionSeparator/>
+        <section id="projects" className="min-h-screen">
+        <ProjectsSection />
+        </section>
+       
+        <SectionSeparator/>
+        <ContactSection />
       </main>
-      <AppSection/>
     </div>
   );
 }
