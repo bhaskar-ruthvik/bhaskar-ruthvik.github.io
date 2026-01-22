@@ -2,7 +2,7 @@ import { Feature } from "./Feature";
 
 export function AppSection() {
   return (
-    <section className="relative py-32">
+    <section className="relative pb-32 pt-16">
       {/* Glass container */}
       <div
         className="

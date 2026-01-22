@@ -28,23 +28,22 @@ function App() {
 
       {/* Page content */}
       <main id="home" className="relative pt-32">
-        {/* HERO */}
-        <section className="min-h-screen flex items-center">
-          <Hero />
-        </section>
-    <SectionSeparator/>
-        {/* ABOUT */}
-        <section id="about" className="min-h-screen">
-        <AppSection />
-        </section>
-        <SectionSeparator/>
-        <section id="projects" className="min-h-screen">
-        <ProjectsSection />
-        </section>
-       
-        <SectionSeparator/>
-        <ContactSection />
-      </main>
+  <section data-section="home" className="h-screen">
+    <Hero />
+  </section>
+
+  <section id="about" data-section="about" className="h-screen mt-scroll-32">
+    <AppSection />
+  </section>
+
+  <section id="projects" data-section="projects" className="h-screen">
+    <ProjectsSection />
+  </section>
+
+  <section id="contact" data-section="contact" className="h-screen">
+    <ContactSection />
+  </section>
+</main>
     </div>
   );
 }
