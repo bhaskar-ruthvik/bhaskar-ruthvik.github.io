@@ -3,7 +3,7 @@ import { Mail } from "lucide-react";
 
 export function ContactSection() {
   return (
-    <section className="relative py-40">
+    <section className="relative py-40 h-full flex items-center align-items-center">
       {/* Glass container */}
       <div
         className="

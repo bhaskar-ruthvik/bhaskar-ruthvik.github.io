@@ -31,15 +31,15 @@ function App() {
   <section data-section="home" className="h-screen">
     <Hero />
   </section>
-
-  <section id="about" data-section="about" className="h-screen mt-scroll-32">
+<SectionSeparator/>
+  <section id="about" data-section="about" className="min-h-screen">
     <AppSection />
   </section>
-
-  <section id="projects" data-section="projects" className="h-screen">
+<SectionSeparator/>
+  <section id="projects" data-section="projects" className="min-h-screen">
     <ProjectsSection />
   </section>
-
+<SectionSeparator/>
   <section id="contact" data-section="contact" className="h-screen">
     <ContactSection />
   </section>

@@ -41,7 +41,7 @@ export function ProjectsSection() {
   const visibleProjects = expanded ? PROJECTS : PROJECTS.slice(0, 3);
 
   return (
-    <section className="relative py-32">
+    <section className="relative py-32 h-full flex items-center align-items-center">
       {/* Glass container */}
       <div
         className="
