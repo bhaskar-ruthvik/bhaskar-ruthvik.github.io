@@ -4,6 +4,7 @@ import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
 import { ProjectsSection } from "./components/ProjectsSection";
 import { SectionSeparator } from "./components/SectionSeparator";
+import bgImage from "./assets/kristaps-ungurs-bscs05zXuvE-unsplash.jpg"
 
 function App() {
   return (
@@ -11,9 +12,11 @@ function App() {
       {/* Ambient background */}
       <div className="fixed inset-0 -z-10">
         <div
+          style={{
+            backgroundImage: `url(${bgImage})`,
+          }}
           className="
             h-full w-full
-            bg-[url('./kristaps-ungurs-bscs05zXuvE-unsplash.jpg')]
             bg-cover bg-center
             blur-xl scale-110
             brightness-80 contrast-110

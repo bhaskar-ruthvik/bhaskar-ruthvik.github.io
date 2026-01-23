@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Feature } from "./Feature";
-
+import myImage from "../assets/IMG_4957.jpeg";
 export function AppSection() {
   const [expanded, setExpanded] = useState(false);
 
@@ -117,7 +117,7 @@ export function AppSection() {
           {/* Image */}
           <div className="relative flex justify-center">
             <img
-              src="/IMG_4957.jpeg"
+              src= {myImage}
               alt="Bhaskar Ruthvik Bikkina, Graduate Computer Science student at Texas A&M University"
               className="
                 w-full
