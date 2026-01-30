@@ -1,10 +1,11 @@
-import { AppSection } from "./components/AppSection";
-import { ContactSection } from "./components/ContactSection";
-import { Hero } from "./components/Hero";
+import { AppSection } from "./sections/AppSection";
+import { ContactSection } from "./sections/ContactSection";
+import { Hero } from "./sections/Hero";
 import { Navbar } from "./components/Navbar";
 import { ProjectsSection } from "./components/ProjectsSection";
 import { SectionSeparator } from "./components/SectionSeparator";
 import bgImage from "./assets/kristaps-ungurs-bscs05zXuvE-unsplash.jpg"
+import { ExperienceResearchSection } from "./sections/ExperienceResearchSection";
 
 function App() {
   return (
@@ -37,6 +38,10 @@ function App() {
 <SectionSeparator/>
   <section id="about" data-section="about" className="min-h-screen">
     <AppSection />
+  </section>
+  <SectionSeparator/>
+  <section id="experience" data-section="experience" className="min-h-screen">
+    <ExperienceResearchSection />
   </section>
 <SectionSeparator/>
   <section id="projects" data-section="projects" className="min-h-screen">

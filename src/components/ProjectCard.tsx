@@ -3,14 +3,17 @@ export function ProjectCard({
     description,
     tag,
     image,
+    onClick,
   }: {
     title: string;
     description: string;
     tag: string;
     image: string;
+    onClick: () => void;
   }) {
     return (
       <div
+        onClick={onClick}
         className="
           group
           relative

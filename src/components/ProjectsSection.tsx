@@ -1,110 +1,56 @@
 import { useState } from "react";
 import { ProjectCard } from "./ProjectCard";
-
-const PROJECTS = [
-    {
-      title: "Immersive Portfolio",
-      description: "A 3D-driven personal portfolio built with React and Three.js.",
-      tag: "Web / 3D",
-      image: "kristaps-ungurs-bscs05zXuvE-unsplash.jpg",
-    },
-    {
-      title: "Architecture Visualizer",
-      description: "Real-time architectural walkthroughs using WebGL.",
-      tag: "Visualization",
-      image: "kristaps-ungurs-bscs05zXuvE-unsplash.jpg",
-    },
-    {
-      title: "Design System",
-      description: "A scalable UI system built with Tailwind and React.",
-      tag: "UI / Frontend",
-      image: "/projects/design-system.jpg",
-    },
-    {
-      title: "Interactive Data Tool",
-      description: "A performant dashboard for visualizing large datasets.",
-      tag: "Data",
-      image: "/projects/data-tool.jpg",
-    },
-    {
-      title: "Motion Experiments",
-      description: "A collection of animation and motion design studies.",
-      tag: "Motion",
-      image: "/projects/motion.jpg",
-    },
-  ];
-  
+import { ProjectModal } from "./ProjectModal";
+import projects from "../data/projects.json";
 
 export function ProjectsSection() {
   const [expanded, setExpanded] = useState(false);
+  const [activeProject, setActiveProject] = useState<any | null>(null);
 
-  const visibleProjects = expanded ? PROJECTS : PROJECTS.slice(0, 3);
+  const visibleProjects = expanded ? projects : projects.slice(0, 3);
 
   return (
-    <section className="relative py-32 h-full flex items-center align-items-center">
-      {/* Glass container */}
-      <div
-        className="
-          mx-auto max-w-6xl
-          rounded-3xl
-          bg-black/40
-          backdrop-blur-lg
-          shadow-xl
-          px-8 py-16
-          md:px-16
-        "
-      >
+    <section className="relative py-32">
+      <div className="mx-auto max-w-6xl rounded-3xl bg-black/40 backdrop-blur-lg px-8 py-16 shadow-xl md:px-16">
         {/* Header */}
         <div className="mb-16">
-          <p className="mb-4 text-sm tracking-[0.3em] text-white/50">
-            PROJECTS
-            <div
-    className="
-      mt-2
-      h-px
-      w-8
-      bg-[#5EEAD4]/50
-    "
-  />
-          </p>
-
-          <h2 className="text-5xl font-black leading-tight">
-            Selected Work
-          </h2>
+          <p className="text-sm tracking-[0.3em] text-white/50">PROJECTS</p>
+          <div className="mt-2 h-px w-8 bg-[#5EEAD4]/50" />
+          <h2 className="mt-6 text-5xl font-black">Selected Work</h2>
         </div>
 
-        {/* Projects grid */}
+        {/* Grid */}
         <div className="grid gap-6 md:grid-cols-3">
           {visibleProjects.map((project) => (
             <ProjectCard
-              key={project.title}
+              key={project.id}
               title={project.title}
-              image={project.image}
-              description={project.description}
+              description={project.summary}
               tag={project.tag}
+              image={project.image}
+              onClick={() => setActiveProject(project)}
             />
           ))}
         </div>
 
-        {/* Expand button */}
+        {/* Expand */}
         <div className="mt-16 flex justify-center">
           <button
-            onClick={() => setExpanded((prev) => !prev)}
-            className="
-              rounded-full
-              bg-white/10
-              px-8 py-3
-              text-sm font-medium
-              text-white
-              backdrop-blur-md
-              transition
-              hover:bg-white/20
-            "
+            onClick={() => setExpanded((v) => !v)}
+            className="rounded-full bg-white/10 px-8 py-3 text-sm text-white hover:bg-white/20"
           >
             {expanded ? "Show less" : "Show all projects"}
           </button>
         </div>
       </div>
+
+      {/* Modal */}
+      {activeProject && (
+        <ProjectModal
+          project={activeProject}
+          onClose={() => setActiveProject(null)}
+        />
+      )}
     </section>
   );
 }

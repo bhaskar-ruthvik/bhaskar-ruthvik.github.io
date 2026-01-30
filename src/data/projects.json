@@ -1,0 +1,130 @@
+[
+    {
+        "id": "keyper",
+        "title": "Keyper — Password Manager",
+        "summary": "Secure password manager with encrypted storage and browser extension.",
+        "description": "Developed a scalable API for password storage and retrieval authenticated using JWT tokens. Implemented two-stage AES encryption for enhanced security and hosted the encrypted database on AWS. Optimized user experience using caching and published a Chrome extension for consumer usage.",
+        "tag": "Security",
+        "image": "/projects/keyper.png",
+        "github": "https://github.com/bhaskar-ruthvik/password-manager-api"
+      },
+    {
+      "id": "pascal-compiler",
+      "title": "Pascal Compiler Implementation",
+      "summary": "Bare-bones Pascal compiler supporting loops, variables, and conditionals.",
+      "description": "Implemented a Pascal language compiler using C, Lex, and Yacc. Designed the standard compiler pipeline including lexical analysis, parsing, and intermediate code generation using three-address code (3AC). The compiler supports core language constructs such as loops, data structures, variables, and conditional statements.",
+      "tag": "Compilers",
+      "image": "/projects/pascal.png",
+      "github": "https://github.com/bhaskar-ruthvik/compiler_construction_assignment1_part2"
+    },
+    {
+      "id": "flashattention-v2",
+      "title": "FlashAttention v2 (Triton)",
+      "summary": "Memory-efficient attention kernels with IO-aware tiling on GPUs.",
+      "description": "Implemented FlashAttention v2 style exact attention using Triton, leveraging IO-aware tiling and online softmax to achieve memory-efficient attention. Benchmarked custom kernels on NVIDIA A100 GPUs, evaluating TFLOP/s, peak memory usage, and GPU utilization. The implementation outperformed FlashAttention v1 at long sequence lengths by avoiding quadratic memory growth.",
+      "tag": "ML Systems / GPU",
+      "image": "/projects/flashattention.png",
+      "github": "https://github.com/bhaskar-ruthvik/flash-attention-triton"
+    },
+    {
+      "id": "auri-mail-client",
+      "title": "Auri — Intelligent Mail Client",
+      "summary": "LLM-powered email client for decluttering inboxes.",
+      "description": "Developed a full-stack application to categorize emails using deep learning and large language models. Built the backend with Spring Boot and PostgreSQL to securely store encrypted emails, and used PyTorch to train the classification model. Currently building a user-facing dashboard that performs on-device inference to adapt to individual user preferences.",
+      "tag": "Full-Stack / AI",
+      "image": "/projects/default_sm.jpg",
+      "github": "https://github.com/bhaskar-ruthvik/auri-mail-client"
+    },
+    {
+      "id": "parallel-attention",
+      "title": "Parallelized Attention Implementation",
+      "summary": "High-performance attention kernels using CUDA and OpenMP.",
+      "description": "Implemented attention mechanisms using naive and tiled DGEMM in C++, comparing performance against OpenMP SIMD DGEMM. Developed optimized CUDA kernels using 2D thread blocks, achieving approximately 80% of cuBLAS performance. Performed extensive parameter tuning to determine optimal tile sizes and thread block configurations.",
+      "tag": "CUDA / Performance",
+      "image": "/projects/attention.png",
+      "github": "https://github.com/yourusername/parallel-attention"
+    },
+    {
+      "id": "sentry-security",
+      "title": "Sentry — Smart Security Camera",
+      "summary": "Real-time security camera with computer vision alerts.",
+      "description": "Built a full-stack security camera application that streams live footage to linked devices using Agora APIs. Implemented OAuth 2.0 authentication using Firebase and Firestore for remote user data storage. Designed a Django-based computer vision pipeline to recognize trusted faces and trigger alerts in real time.",
+      "tag": "Computer Vision",
+      "image": "/projects/default_sm.jpg",
+      "github": "https://github.com/bhaskar-ruthvik/sentry"
+    },
+    {
+      "id": "vocabulagre",
+      "title": "VocabulaGRE",
+      "summary": "Vocabulary learning platform with flashcards and gamification.",
+      "description": "Developed a vocabulary improvement web application using Next.js and Tailwind CSS for university peers, reaching over 50 users. Integrated the Merriam-Webster API for dictionary lookups and Firebase Firestore for user-specific data storage. Added a flashcard system to gamify learning and deployed the application on a public domain using Vercel.",
+      "tag": "Web / EdTech",
+      "image": "/projects/vocabula.png",
+      "github": "https://github.com/bhaskar-ruthvik/vocabulagre"
+    },
+    {
+      "id": "payment-gateway",
+      "title": "Centralized Payment Gateway",
+      "summary": "Microservices-based UPI payment gateway with cryptographic security.",
+      "description": "Designed a Unified Payments Interface (UPI) system composed of microservices communicating via TCP sockets. Applied lightweight cryptography techniques to improve operational speed by 77% while maintaining user data privacy. Built an authentication-based web application using React and Flask for end-user interaction.",
+      "tag": "Distributed Systems",
+      "image": "/projects/default_sm.jpg",
+      "github": "https://github.com/bhaskar-ruthvik/centralized-upi-payment-gateway"
+    },
+  
+    {
+      "id": "graph-database",
+      "title": "Graph Database Architecture",
+      "summary": "Multi-threaded graph database with load balancing.",
+      "description": "Implemented read, write, and search operations for a simple graph database in C using the POSIX API. Designed a load balancer for scalability and optimized search performance using multi-threading. Utilized shared memory and semaphores to prevent race conditions and ensure consistency.",
+      "tag": "Systems",
+      "image": "/projects/graphdb.png",
+      "github": "https://github.com/bhaskar-ruthvik/os_assignment2"
+    },
+    {
+      "id": "sarcasm-detection",
+      "title": "Multi-modal Sarcasm Detection",
+      "summary": "Deep learning models for sarcasm detection across modalities.",
+      "description": "Compared multi-modal sarcasm detection models with single-modal approaches, analyzing accuracy and inference time trade-offs. Optimized the best-performing model to improve inference speed by 40% and deployed it on Hugging Face Spaces. Used A/B testing to determine production-ready configurations.",
+      "tag": "Machine Learning",
+      "image": "/projects/sarcasm.png",
+      "github": "https://huggingface.co/spaces/bhaskar-ruthvik/SocialMedia_Sarcastic_Post_Flagger"
+    },
+    {
+      "id": "convex-hull",
+      "title": "Convex Hull Visualization",
+      "summary": "3D visualization of convex hull algorithms using WebGL.",
+      "description": "Created a 3D web application using React, Three.js, and WebGL to visualize two algorithms for solving the Convex Hull problem. Optimized performance using caching and local storage, improving runtime by 28% for large test cases. Documented the project extensively using Storybook and deployed it on Vercel.",
+      "tag": "Visualization / 3D",
+      "image": "/projects/convexhull.png",
+      "github": "https://github.com/bhaskar-ruthvik/convex-hull-visualisation"
+    },
+    {
+      "id": "smartmart",
+      "title": "SmartMart",
+      "summary": "Full-stack online supermarket with role-based access control.",
+      "description": "Developed a full-stack web application for an online supermarket using Spring Boot, PostgreSQL, and React. Implemented role-based access control, inventory management, report generation, and secure token-based authentication. Designed a responsive and user-friendly frontend interface.",
+      "tag": "Full-Stack",
+      "image": "/projects/smartmart.jpg",
+      "github": "https://github.com/bhaskar-ruthvik/supermarket-app-springboot"
+    },
+    {
+      "id": "fault-detection",
+      "title": "Machine Part Fault Detection",
+      "summary": "Vision-based fault detection using sensor data.",
+      "description": "Designed a machine learning pipeline that converts vibration and acoustic sensor readings into image representations. Evaluated CNNs and transformer-based models, demonstrating the feasibility of Vision Transformers for fault detection. Improved accuracy by 20% through architectural modifications.",
+      "tag": "Computer Vision",
+      "image": "/projects/fault.jpg",
+      "github": "https://github.com/yourusername/fault-detection"
+    },
+    {
+      "id": "intellicom",
+      "title": "Intellicom",
+      "summary": "VS Code extension for automated code commenting.",
+      "description": "Developed a Visual Studio Code extension using the OpenAI API that provides one-click code commenting. Implemented support for both single-line and multi-line comments based on user selection. Written entirely in TypeScript to ensure type safety and maintainability.",
+      "tag": "Developer Tools",
+      "image": "/projects/intellicom.png",
+      "github": "https://github.com/bhaskar-ruthvik/intellicom"
+    }
+  ]
+  

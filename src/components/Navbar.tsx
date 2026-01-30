@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 const items = [
   { label: "Home", id: "home" },
   { label: "About", id: "about" },
+  { label: "Experience", id: "experience" },
   { label: "Projects", id: "projects" },
   { label: "Contact", id: "contact" },
 ];
@@ -107,8 +108,8 @@ export function Navbar() {
           <div
             className="absolute inset-y-1 rounded-full bg-white transition-all duration-300"
             style={{
-              width: "5.5rem",
-              transform: `translateX(${active * 5.5}rem)`,
+              width: "6.5rem",
+              transform: `translateX(${active * 6.5}rem)`,
             }}
           />
 
@@ -117,8 +118,9 @@ export function Navbar() {
               key={item.id}
               onClick={() => handleNavClick(i, item.id)}
               className={`
-                relative z-10 w-[5.5rem]
+                relative z-10 w-[6.5rem]
                 px-4 py-2 text-sm font-medium
+                text-center
                 transition-colors
                 ${
                   active === i
