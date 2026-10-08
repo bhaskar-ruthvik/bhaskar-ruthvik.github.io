@@ -6,7 +6,7 @@
     "description": "Built a barebones x86 operating system kernel in C++ and Assembly, debugged with QEMU and gdb. Implemented two-level hierarchical paging with a page fault handler, relocating page tables into virtual memory. Added preemptive round-robin scheduling on an end-of-quantum timer, masking interrupts in critical sections. Replaced busy-wait disk I/O with a driver that blocks the thread and yields the CPU until the disk is ready, and built a file system over the block device with an inode table, free-list bitmap, and sequential file read/write.",
     "tag": "Operating Systems",
     "period": "Jan 2026 – Apr 2026",
-    "image": "/projects/default_sm.jpg"
+    "image": "/projects/barebones-os.webp"
   },
   {
     "id": "flashattention-v2",
@@ -15,7 +15,7 @@
     "description": "Implemented FlashAttention v2 style exact attention using Triton, leveraging IO-aware tiling and online softmax to achieve memory-efficient attention. Benchmarked custom kernels on NVIDIA A100 GPUs, evaluating TFLOP/s, peak memory usage, and GPU utilization. The implementation outperformed FlashAttention v1 at long sequence lengths by avoiding quadratic memory growth.",
     "tag": "ML Systems / GPU",
     "period": "Oct 2025 – Dec 2025",
-    "image": "/projects/flashattention.png",
+    "image": "/projects/flashattention-v2.webp",
     "github": "https://github.com/bhaskar-ruthvik/flash-attention-triton"
   },
   {
@@ -25,7 +25,8 @@
     "description": "Optimized SCENT, a compositional risk minimization algorithm, on a 163K-class extreme classification task in PyTorch. Lifted validation accuracy from 26.4% to 37.3% through a staged five-config ablation study on optimizer choice, ranking first of all class submissions on the held-out leaderboard. Proposed a per-sample adaptive dual step size scaled by an EMA of each sample's exponential magnitude.",
     "tag": "ML Optimization",
     "period": "Mar 2026 – May 2026",
-    "image": "/projects/default_sm.jpg"
+    "image": "/projects/scent-dual-step.webp",
+    "github": "https://github.com/bhaskar-ruthvik/Adaptive-SCENT"
   },
   {
     "id": "keyper",
@@ -34,7 +35,7 @@
     "description": "Developed a scalable API for password storage and retrieval authenticated using JWT tokens. Implemented two-stage AES encryption for enhanced security and hosted the encrypted database on AWS. Optimized user experience using caching and published a Chrome extension for consumer usage.",
     "tag": "Security",
     "period": "May 2024 – Jun 2024",
-    "image": "/projects/keyper.png",
+    "image": "/projects/keyper.webp",
     "github": "https://github.com/bhaskar-ruthvik/password-manager-api"
   },
   {
@@ -44,7 +45,7 @@
     "description": "Implemented a Pascal language compiler using C, Lex, and Yacc. Designed the standard compiler pipeline including lexical analysis, parsing, and intermediate code generation using three-address code (3AC). The compiler supports core language constructs such as loops, data structures, variables, and conditional statements.",
     "tag": "Compilers",
     "period": "Mar 2024 – May 2024",
-    "image": "/projects/pascal.png",
+    "image": "/projects/pascal-compiler.webp",
     "github": "https://github.com/bhaskar-ruthvik/compiler_construction_assignment1_part2"
   },
   {
@@ -54,7 +55,7 @@
     "description": "Implemented attention mechanisms using naive and tiled DGEMM in C++, comparing performance against OpenMP SIMD DGEMM. Developed optimized CUDA kernels using 2D thread blocks, achieving approximately 80% of cuBLAS performance. Performed extensive parameter tuning to determine optimal tile sizes and thread block configurations.",
     "tag": "CUDA / Performance",
     "period": "Sep 2025 – Oct 2025",
-    "image": "/projects/attention.png"
+    "image": "/projects/parallel-attention.webp"
   },
   {
     "id": "neural-pde",
@@ -63,7 +64,7 @@
     "description": "Implemented four neural PDE solvers in PyTorch — PINN, SA-PINN, FNO, and SpecB-FNO — on 1D Burgers' equation, generating ground truth with a Fourier pseudo-spectral solver across four viscosities. Built error metrics decomposed by Fourier mode, frequency band, and sharp versus smooth physical regions. Isolated spectral bias: PINN mid-band error ran 18x and high-band error 400x worse than FNO at low viscosity.",
     "tag": "Scientific ML",
     "period": "Mar 2026 – May 2026",
-    "image": "/projects/default_sm.jpg"
+    "image": "/projects/neural-pde.webp"
   },
   {
     "id": "llm-snowballing",
@@ -72,7 +73,8 @@
     "description": "Tested how language models from the DeepSeek, Gemma, and GPT families handle hallucination snowballing on open-domain question answering using Hugging Face and PyTorch. Proposed prompt-based intervention strategies to mitigate snowballing and improve answer accuracy.",
     "tag": "LLM Evaluation",
     "period": "Oct 2025 – Dec 2025",
-    "image": "/projects/default_sm.jpg"
+    "image": "/projects/llm-snowballing.webp",
+    "github": "https://github.com/bhaskar-ruthvik/CSCE689-Course-Project"
   },
   {
     "id": "auri-mail-client",
@@ -81,7 +83,7 @@
     "description": "Developed a full-stack application to categorize emails using deep learning and large language models. Built the backend with Spring Boot and PostgreSQL to securely store encrypted emails, and used PyTorch to train the classification model. Currently building a user-facing dashboard that performs on-device inference to adapt to individual user preferences.",
     "tag": "Full-Stack / AI",
     "period": "Aug 2025 – Present",
-    "image": "/projects/default_sm.jpg",
+    "image": "/projects/auri-mail-client.webp",
     "github": "https://github.com/bhaskar-ruthvik/auri-mail-client"
   },
   {
@@ -91,7 +93,7 @@
     "description": "Built a voice-first travel assistant at TAMUHack 2026 using Next.js, Django, and Supabase. Designed the Supabase database schema for passenger reservations, caregiver sessions, and flight data. Built secure authentication with role-based access and Resend-powered email invitations for family caregivers, using Cursor to rapidly prototype backend services and auth flows.",
     "tag": "Hackathon / Full-Stack",
     "period": "TAMUHack 2026",
-    "image": "/projects/default_sm.jpg"
+    "image": "/projects/elder-strolls.webp"
   },
   {
     "id": "sentry-security",
@@ -100,7 +102,7 @@
     "description": "Built a full-stack security camera application that streams live footage to linked devices using Agora APIs. Implemented OAuth 2.0 authentication using Firebase and Firestore for remote user data storage. Designed a Django-based computer vision pipeline to recognize trusted faces and trigger alerts in real time.",
     "tag": "Computer Vision",
     "period": "Jul 2025",
-    "image": "/projects/default_sm.jpg",
+    "image": "/projects/sentry-security.webp",
     "github": "https://github.com/bhaskar-ruthvik/sentry"
   },
   {
@@ -110,7 +112,7 @@
     "description": "Developed a vocabulary improvement web application using Next.js and Tailwind CSS for university peers, reaching over 50 users. Integrated the Merriam-Webster API for dictionary lookups and Firebase Firestore for user-specific data storage. Added a flashcard system to gamify learning and deployed the application on a public domain using Vercel.",
     "tag": "Web / EdTech",
     "period": "Jul 2024",
-    "image": "/projects/vocabula.png",
+    "image": "/projects/vocabulagre.webp",
     "github": "https://github.com/bhaskar-ruthvik/vocabulagre"
   },
   {
@@ -120,7 +122,7 @@
     "description": "Designed a Unified Payments Interface (UPI) system composed of microservices communicating via TCP sockets. Applied lightweight cryptography techniques to improve operational speed by 77% while maintaining user data privacy. Built an authentication-based web application using React and Flask for end-user interaction.",
     "tag": "Distributed Systems",
     "period": "Mar 2025 – Apr 2025",
-    "image": "/projects/default_sm.jpg",
+    "image": "/projects/payment-gateway.webp",
     "github": "https://github.com/bhaskar-ruthvik/centralized-upi-payment-gateway"
   },
   {
@@ -130,7 +132,7 @@
     "description": "Implemented read, write, and search operations for a simple graph database in C using the POSIX API. Designed a load balancer for scalability and optimized search performance using multi-threading. Utilized shared memory and semaphores to prevent race conditions and ensure consistency.",
     "tag": "Systems",
     "period": "Oct 2023 – Dec 2023",
-    "image": "/projects/graphdb.png",
+    "image": "/projects/graph-database.webp",
     "github": "https://github.com/bhaskar-ruthvik/os_assignment2"
   },
   {
@@ -140,7 +142,7 @@
     "description": "Compared multi-modal sarcasm detection models with single-modal approaches, analyzing accuracy and inference time trade-offs. Optimized the best-performing model to improve inference speed by 40% and deployed it on Hugging Face Spaces. Used A/B testing to determine production-ready configurations.",
     "tag": "Machine Learning",
     "period": "Oct 2023 – Nov 2023",
-    "image": "/projects/sarcasm.png",
+    "image": "/projects/sarcasm-detection.webp",
     "github": "https://huggingface.co/spaces/bhaskar-ruthvik/SocialMedia_Sarcastic_Post_Flagger"
   },
   {
@@ -149,8 +151,9 @@
     "summary": "3D visualization of convex hull algorithms using WebGL.",
     "description": "Created a 3D web application using React, Three.js, and WebGL to visualize two algorithms for solving the Convex Hull problem. Optimized performance using caching and local storage, improving runtime by 28% for large test cases. Documented the project extensively using Storybook and deployed it on Vercel.",
     "tag": "Visualization / 3D",
-    "image": "/projects/convexhull.png",
-    "github": "https://github.com/bhaskar-ruthvik/convex-hull-visualisation"
+    "image": "/projects/convex-hull.webp",
+    "github": "https://github.com/bhaskar-ruthvik/convex-hull-visualisation",
+    "demo": "https://convex-hull-visualisation-g2.vercel.app/"
   },
   {
     "id": "smartmart",
@@ -159,7 +162,7 @@
     "description": "Developed a full-stack web application for an online supermarket using Spring Boot, PostgreSQL, and React. Implemented role-based access control, inventory management, report generation, and secure token-based authentication. Designed a responsive and user-friendly frontend interface.",
     "tag": "Full-Stack",
     "period": "Sep 2022 – Nov 2022",
-    "image": "/projects/default_sm.jpg",
+    "image": "/projects/smartmart.webp",
     "github": "https://github.com/bhaskar-ruthvik/supermarket-app-springboot"
   },
   {
@@ -169,7 +172,7 @@
     "description": "Designed a machine learning pipeline that converts vibration and acoustic sensor readings into image representations. Evaluated CNNs and transformer-based models, demonstrating the feasibility of Vision Transformers for fault detection. Improved accuracy by 20% through architectural modifications.",
     "tag": "Computer Vision",
     "period": "Sep 2023 – Nov 2023",
-    "image": "/projects/default_sm.jpg"
+    "image": "/projects/fault-detection.webp"
   },
   {
     "id": "intellicom",
@@ -178,7 +181,7 @@
     "description": "Developed a Visual Studio Code extension using the OpenAI API that provides one-click code commenting. Implemented support for both single-line and multi-line comments based on user selection. Written entirely in TypeScript to ensure type safety and maintainability.",
     "tag": "Developer Tools",
     "period": "Jun 2024",
-    "image": "/projects/intellicom.png",
+    "image": "/projects/intellicom.webp",
     "github": "https://github.com/bhaskar-ruthvik/intellicom"
   }
 ]

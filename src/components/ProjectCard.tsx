@@ -38,7 +38,7 @@ export function ProjectCard({
         `}
       >
         {/* Image */}
-        <div className="relative h-32 w-full overflow-hidden sm:h-40">
+        <div className="relative aspect-[2/1] w-full overflow-hidden">
           <img
             src={image}
             alt={title}
@@ -53,8 +53,8 @@ export function ProjectCard({
             "
           />
 
-          {/* Image overlay */}
-          <div className="absolute inset-0 bg-black/30" />
+          {/* Thumbnails are already dark; only a faint edge for separation */}
+          <div className="absolute inset-0 ring-1 ring-inset ring-white/5" />
         </div>
 
         {/* Content */}

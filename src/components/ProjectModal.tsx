@@ -1,4 +1,5 @@
 import { FaGithub } from "react-icons/fa6";
+import { ArrowUpRight } from "lucide-react";
 import { Modal } from "./Modal";
 
 export type Project = {
@@ -10,6 +11,7 @@ export type Project = {
   period?: string;
   image: string;
   github?: string;
+  demo?: string;
 };
 
 export function ProjectModal({
@@ -25,7 +27,7 @@ export function ProjectModal({
       <img
         src={project.image}
         alt={project.title}
-        className="mb-6 h-40 w-full rounded-xl object-cover sm:h-56"
+        className="mb-6 aspect-[2/1] w-full rounded-xl object-cover"
       />
 
       {/* Content */}
@@ -38,17 +40,32 @@ export function ProjectModal({
 
       <p className="mb-6 text-white/70">{project.description}</p>
 
-      {/* GitHub */}
-      {project.github && (
-        <a
-          href={project.github}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center gap-3 rounded-full bg-white/10 px-6 py-3 text-sm text-white hover:bg-white/20"
-        >
-          <FaGithub />
-          View on GitHub
-        </a>
+      {/* Links */}
+      {(project.demo || project.github) && (
+        <div className="flex flex-wrap gap-3">
+          {project.demo && (
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-teal-400 px-6 py-3 text-sm font-semibold text-black hover:bg-teal-300"
+            >
+              Live demo
+              <ArrowUpRight className="h-4 w-4" />
+            </a>
+          )}
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-3 rounded-full bg-white/10 px-6 py-3 text-sm text-white hover:bg-white/20"
+            >
+              <FaGithub />
+              View on GitHub
+            </a>
+          )}
+        </div>
       )}
     </Modal>
   );
