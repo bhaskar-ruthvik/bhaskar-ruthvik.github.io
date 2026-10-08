@@ -1,41 +1,45 @@
 import { FaGithub } from "react-icons/fa6";
-import { X } from "lucide-react";
+import { Modal } from "./Modal";
+
+export type Project = {
+  id: string;
+  title: string;
+  summary: string;
+  description: string;
+  tag: string;
+  period?: string;
+  image: string;
+  github?: string;
+};
 
 export function ProjectModal({
   project,
   onClose,
 }: {
-  project: any;
+  project: Project;
   onClose: () => void;
 }) {
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 backdrop-blur-sm">
-      <div className="relative max-w-3xl w-full rounded-3xl bg-black/90 p-8 shadow-2xl">
-        {/* Close */}
-        <button
-          onClick={onClose}
-          className="absolute right-6 top-6 text-white/60 hover:text-white"
-        >
-          <X />
-        </button>
+    <Modal label={project.title} onClose={onClose} size="max-w-3xl">
+      {/* Image */}
+      <img
+        src={project.image}
+        alt={project.title}
+        className="mb-6 h-40 w-full rounded-xl object-cover sm:h-56"
+      />
 
-        {/* Image */}
-        <img
-          src={project.image}
-          alt={project.title}
-          className="mb-6 h-56 w-full rounded-xl object-cover"
-        />
+      {/* Content */}
+      <p className="mb-2 text-xs tracking-widest text-white/50">
+        {project.tag}
+        {project.period && ` · ${project.period}`}
+      </p>
 
-        {/* Content */}
-        <p className="mb-2 text-xs tracking-widest text-white/50">
-          {project.tag}
-        </p>
+      <h3 className="mb-4 text-2xl font-black sm:text-3xl">{project.title}</h3>
 
-        <h3 className="mb-4 text-3xl font-black">{project.title}</h3>
+      <p className="mb-6 text-white/70">{project.description}</p>
 
-        <p className="mb-6 text-white/70">{project.description}</p>
-
-        {/* GitHub */}
+      {/* GitHub */}
+      {project.github && (
         <a
           href={project.github}
           target="_blank"
@@ -45,7 +49,7 @@ export function ProjectModal({
           <FaGithub />
           View on GitHub
         </a>
-      </div>
-    </div>
+      )}
+    </Modal>
   );
 }

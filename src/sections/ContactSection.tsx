@@ -1,51 +1,53 @@
 import { FaLinkedin, FaGithub, FaGoogleScholar } from "react-icons/fa6";
 import { Mail } from "lucide-react";
+import { GlassPanel } from "../components/GlassPanel";
+import { SectionLabel } from "../components/SectionLabel";
+
+const secondaryButton = `
+  inline-flex
+  items-center
+  justify-center
+  gap-3
+  rounded-full
+  bg-white/10
+  px-6 py-3
+  sm:px-8
+  text-sm font-medium
+  text-white
+  backdrop-blur-md
+  transition
+  hover:bg-white/20
+`;
 
 export function ContactSection() {
   return (
-    <section className="relative py-40 h-full flex items-center">
-      {/* Glass container */}
-      <div
-        className="
-          mx-auto max-w-6xl
-          rounded-3xl
-          bg-black/40
-          backdrop-blur-lg
-          shadow-xl
-          px-8 py-20
-          md:px-16
-        "
-      >
-        {/* Label */}
-        <div className="mb-6">
-          <p className="text-sm tracking-[0.3em] text-white/50">
-            CONTACT
-          </p>
-          <div className="mt-2 h-px w-8 bg-[#5EEAD4]/50" />
-        </div>
+    <GlassPanel>
+        <SectionLabel>Contact</SectionLabel>
 
         {/* Heading */}
-        <h2 className="mb-6 max-w-3xl text-[clamp(2.5rem,6vw,4rem)] font-black leading-tight">
+        <h2 className="mb-6 max-w-3xl text-[clamp(2.25rem,6vw,4rem)] font-black leading-tight">
           Let’s connect!
         </h2>
 
         {/* Description */}
-        <p className="mb-12 max-w-2xl text-lg text-white/70">
+        <p className="mb-10 max-w-2xl text-base text-white/70 sm:mb-12 sm:text-lg">
           I’m a Graduate Computer Science student at Texas A&amp;M University,
-          currently exploring opportunities across software engineering,
-          machine learning, and research-driven roles. If you’re interested in
+          graduating in May 2027 and exploring full-time opportunities across
+          software engineering, ML systems, and AI starting June 2027. If you’re interested in
           collaborating, discussing ideas, or learning more about my work,
           I’d love to connect.
         </p>
 
-        {/* CTA buttons */}
-        <div className="flex flex-wrap gap-4">
+        {/* CTA buttons: 2-up grid on phones, a single row from sm up */}
+        <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:gap-4">
           {/* Email (primary) */}
           <a
             href="mailto:bhaskar-ruthvik@tamu.edu"
             className="
+              col-span-2
               inline-flex
               items-center
+              justify-center
               gap-3
               rounded-full
               bg-teal-400
@@ -65,19 +67,7 @@ export function ContactSection() {
             href="https://www.linkedin.com/in/bhaskar-ruthvik-bikkina-a7908324a/"
             target="_blank"
             rel="noreferrer"
-            className="
-              inline-flex
-              items-center
-              gap-3
-              rounded-full
-              bg-white/10
-              px-8 py-3
-              text-sm font-medium
-              text-white
-              backdrop-blur-md
-              transition
-              hover:bg-white/20
-            "
+            className={secondaryButton}
           >
             <FaLinkedin className="h-4 w-4 text-white/80" />
             <span>LinkedIn</span>
@@ -88,19 +78,7 @@ export function ContactSection() {
             href="https://github.com/bhaskar-ruthvik"
             target="_blank"
             rel="noreferrer"
-            className="
-              inline-flex
-              items-center
-              gap-3
-              rounded-full
-              bg-white/10
-              px-8 py-3
-              text-sm font-medium
-              text-white
-              backdrop-blur-md
-              transition
-              hover:bg-white/20
-            "
+            className={secondaryButton}
           >
             <FaGithub className="h-4 w-4 text-white/80" />
             <span>GitHub</span>
@@ -111,25 +89,12 @@ export function ContactSection() {
             href="https://scholar.google.com/citations?user=Q9gzG3cAAAAJ"
             target="_blank"
             rel="noreferrer"
-            className="
-              inline-flex
-              items-center
-              gap-3
-              rounded-full
-              bg-white/10
-              px-8 py-3
-              text-sm font-medium
-              text-white
-              backdrop-blur-md
-              transition
-              hover:bg-white/20
-            "
+            className={`col-span-2 ${secondaryButton}`}
           >
             <FaGoogleScholar className="h-4 w-4 text-white/80" />
             <span>Google Scholar</span>
           </a>
         </div>
-      </div>
-    </section>
+    </GlassPanel>
   );
 }

@@ -1,51 +1,35 @@
 import { useState } from "react";
 import { Feature } from "../components/Feature";
-import myImage from "../assets/IMG_4957.jpeg";
+import { GlassPanel } from "../components/GlassPanel";
+import { SectionLabel } from "../components/SectionLabel";
+import myImage from "../assets/profile.webp";
 export function AppSection() {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <section className="relative pb-32 pt-16 h-full flex items-center">
-      {/* Glass container */}
-      <div
-        className="
-          mx-auto max-w-6xl
-          rounded-3xl
-          bg-black/40
-          backdrop-blur-lg
-          shadow-xl
-          px-8 py-16
-          md:px-16
-        "
-      >
+    <GlassPanel>
         {/* Top content: text + image */}
-        <div className="grid gap-12 md:grid-cols-2 md:items-center">
+        <div className="grid gap-10 md:grid-cols-2 md:items-center md:gap-12">
           {/* Text */}
           <div>
-            {/* Section label */}
-            <div className="mb-6">
-              <p className="text-sm tracking-[0.3em] text-white/50">
-                ABOUT
-              </p>
-              <div className="mt-2 h-px w-8 bg-[#5EEAD4]/50" />
-            </div>
+            <SectionLabel>About</SectionLabel>
 
             {/* Heading */}
-            <h2 className="mb-6 text-5xl font-black leading-tight">
+            <h2 className="mb-6 text-3xl font-black leading-tight sm:text-4xl lg:text-5xl">
               Engineering Scalable Systems
-              <br />
+              <br className="hidden sm:block" />{" "}
               at the Intersection of AI & Software
             </h2>
 
             {/* Body copy */}
-            <div className="max-w-xl text-lg text-white/70">
+            <div className="max-w-xl text-base text-white/70 sm:text-lg">
               {/* Always visible */}
               <p>
-                I’m a Graduate Computer Science student at Texas A&amp;M University
-                with a strong foundation in software engineering and applied
-                machine learning. My work focuses on building robust, scalable
-                systems that connect modern AI techniques with real-world
-                applications.
+                I’m a Master’s student in Computer Science at Texas A&amp;M
+                University with a strong foundation in software engineering and
+                applied machine learning. Most recently, I was an MTS Intern at
+                zaimler, building production APIs, LLM serving infrastructure,
+                and evaluation tooling for agentic AI systems.
               </p>
 
               {/* Expandable content */}
@@ -65,13 +49,13 @@ export function AppSection() {
                 <div className="space-y-4">
                   <p>
                     I’ve worked across the stack — from designing APIs and
-                    user-facing products to developing and optimizing LLM and
-                    retrieval-augmented generation (RAG) systems, distributed
-                    data pipelines, and performance-critical code. My interests
-                    include improving the reliability and robustness of large
-                    language models, building efficient ML systems with GPU
-                    acceleration and optimized inference, and applying AI to
-                    automation and robotics.
+                    user-facing products to optimizing LLM inference, building
+                    retrieval-augmented generation (RAG) systems, and writing
+                    performance-critical code from CUDA kernels to an x86
+                    kernel. At the TAMU Flair Lab, I research memory
+                    mechanisms that help LLM agents explore more efficiently,
+                    and my earlier work on RAG and VR education has been
+                    published at ECIR, an EMNLP workshop, and India HCI.
                   </p>
 
                   <p>
@@ -119,9 +103,15 @@ export function AppSection() {
             <img
               src= {myImage}
               alt="Bhaskar Ruthvik Bikkina, Graduate Computer Science student at Texas A&M University"
+              width={800}
+              height={800}
+              loading="lazy"
+              decoding="async"
               className="
                 w-full
-                max-w-sm
+                max-w-[15rem]
+                sm:max-w-sm
+                aspect-square
                 rounded-2xl
                 object-cover
                 shadow-lg
@@ -131,7 +121,7 @@ export function AppSection() {
         </div>
 
         {/* Focus areas / features */}
-        <div className="mt-20 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid gap-6 md:mt-20 md:grid-cols-3">
           <Feature
             title="Software Engineering"
             text="Scalable systems, APIs, distributed pipelines"
@@ -145,7 +135,6 @@ export function AppSection() {
             text="End-to-end products, performance-focused UI"
           />
         </div>
-      </div>
-    </section>
+    </GlassPanel>
   );
 }
